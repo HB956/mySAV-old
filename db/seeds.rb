@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user = User.find_by(email:"harold@lesraffineurs.com")
+(0..10).each do |i|
+    Case.create(user_id: user.id, state: "Nouveau #{i}", order: "23456 #{i}", client: "Dominique Bénard #{i}", address: "31 rue de Toulouse #{i}", category: "problème livraison #{i}", subject: "livré mais non reçu #{i}", note: "client contacté, en attente réponse #{i}", ticket: "27645 #{i}")
+end
