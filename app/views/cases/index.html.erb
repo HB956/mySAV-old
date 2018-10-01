@@ -1,13 +1,21 @@
 <div id="vue">
     Hello World !
-    
+    <i-button>Hello</i-button>
+    <i-table border width="" height="500" :columns="columns" :data="cases">
+        
+    </i-table>
     <ul>
         <li v-for="c in cases">
             {{ c.order }}
             {{ c.state }}
             {{ c.client }}
+            <button v-on:click="show">Edit</button>
         </li>
     </ul>
+    
+    <Modal v-model="editModal" title="Editer le dossier" ok-text="Valider" cancel-text="Annuler" @on-ok="updateCase">
+        <input type="text">
+    </Modal>
 </div>
 
 <% content_for :after_js do %>
